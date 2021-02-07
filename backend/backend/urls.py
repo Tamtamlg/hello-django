@@ -31,6 +31,9 @@ urlpatterns = [
     path('queryparams/<int:productid>/', views.queryparams),
 
 
+    re_path(r'^news/', views.news),
+    re_path(r'^details/', views.details),
+
 
     # path('contacts', views.contacts, name='contacts'),
     path('admin/', admin.site.urls),

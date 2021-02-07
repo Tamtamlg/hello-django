@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
 
 # Create your views here.
 
@@ -24,3 +24,9 @@ def queryparams(request, productid):
     category = request.GET.get('cat', '')
     output = '<h1>Product № {0}</h1><h2>Category: {1}</h2>'.format(productid, category)
     return HttpResponse(output)
+
+def news(request):
+    return HttpResponseRedirect('/about')
+
+def details(request):
+    return HttpResponsePermanentRedirect('/')
