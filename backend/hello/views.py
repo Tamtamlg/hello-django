@@ -6,7 +6,9 @@ from django.shortcuts import render
 def index(request):
     data = {
         'header': 'Hello from Django template',
-        'message': 'lorem ipsum dalor...'
+        'message': 'lorem ipsum dalor...',
+        'n': 5,
+        'langs': ["English", "German", "French", "Spanish", "Chinese"]
     }
     return render(request, 'hello/index.html', context=data)
 

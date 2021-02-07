@@ -1,6 +1,23 @@
 {% extends "base.html" %}
 {% block title %}Hello Django{% endblock %}
 {% block content %}
-  <h1>{{header}}</h1>
-  <p>{{message}}</p>
+
+<h1>{{header}}</h1>
+<p>{{message}}</p>
+
+{% if n > 5 %}
+<p>n > 5</p>
+{% elif n < 5 %}
+<p>n > 5</p>
+{% else %}
+<p>n == 5</p>
+{% endif %}
+
+
+<ul>
+  {% for item in langs %}
+  <li>{{item}}</li>
+  {% endfor %}
+</ul>
+
 {% endblock %}
