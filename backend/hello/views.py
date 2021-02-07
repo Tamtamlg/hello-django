@@ -1,16 +1,24 @@
 from django.shortcuts import render
-# from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
+from .forms import UserForm
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
 
 # Create your views here.
 
 def index(request):
-    data = {
-        'header': 'Hello from Django template',
-        'message': 'lorem ipsum dalor...',
-        'n': 5,
-        'langs': ["English", "German", "French", "Spanish", "Chinese"]
-    }
-    return render(request, 'hello/index.html', context=data)
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        age = request.POST.get('age')
+        return HttpResponse('<h2>Hello {0}</h2>'.format(name))
+    else:
+        user_form = UserForm()
+        data = {
+            'header': 'Hello from Django template',
+            'message': 'lorem ipsum dalor...',
+            'n': 5,
+            'langs': ["English", "German", "French", "Spanish", "Chinese"],
+            'form': user_form,
+        }
+        return render(request, 'hello/index.html', context=data)
 
 # def about(request):
 #     return HttpResponse('<h1>About</h1>')

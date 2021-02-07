@@ -20,4 +20,12 @@
   {% endfor %}
 </ul>
 
+<form method="POST">
+  {% csrf_token %}
+  <table>
+    {{form}}
+  </table>
+  <button type="submit">Send</button>
+</form>
+
 {% endblock %}
