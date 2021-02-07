@@ -20,19 +20,19 @@ from hello import views
 
 urlpatterns = [
     path('', views.index, name='home'),
-    re_path(r'^about/contacts', views.contacts, name='contacts'),
-    re_path(r'^about', views.about, name='about'),
+    # re_path(r'^about/contacts', views.contacts, name='contacts'),
+    # re_path(r'^about', views.about, name='about'),
 
     # re_path(r'^products/(?P<productid>\d+)/', views.products),
     # re_path(r'^users/(?P<id>\d+)/(?P<name>\D+)', views.users),
-    path('products/<int:productid>/', views.products),
-    path('users/<int:id>/<name>', views.users),
+    # path('products/<int:productid>/', views.products),
+    # path('users/<int:id>/<name>', views.users),
 
-    path('queryparams/<int:productid>/', views.queryparams),
+    # path('queryparams/<int:productid>/', views.queryparams),
 
 
-    re_path(r'^news/', views.news),
-    re_path(r'^details/', views.details),
+    # re_path(r'^news/', views.news),
+    # re_path(r'^details/', views.details),
 
 
     # path('contacts', views.contacts, name='contacts'),
