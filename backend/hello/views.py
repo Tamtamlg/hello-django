@@ -4,7 +4,11 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    return render(request, 'hello/index.html')
+    data = {
+        'header': 'Hello from Django template',
+        'message': 'lorem ipsum dalor...'
+    }
+    return render(request, 'hello/index.html', context=data)
 
 # def about(request):
 #     return HttpResponse('<h1>About</h1>')
