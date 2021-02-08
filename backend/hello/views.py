@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import UserForm
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
-
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect, HttpResponseNotFound
+from .models import Person
 # Create your views here.
 
 def index(request):

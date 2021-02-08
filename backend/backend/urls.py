@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import re_path
-from hello import views
+# from hello import views
+from crud import views
 
 urlpatterns = [
     path('', views.index, name='home'),
-    re_path(r'^forms', views.forms, name='forms'),
+    # re_path(r'^forms', views.forms, name='forms'),
     # re_path(r'^about/contacts', views.contacts, name='contacts'),
     # re_path(r'^about', views.about, name='about'),
 
@@ -37,5 +38,10 @@ urlpatterns = [
 
 
     # path('contacts', views.contacts, name='contacts'),
+
+    path('create/', views.create, name='create'),
+    path('edit/<int:id>/', views.edit, name='edit'),
+    path('delete/<int:id>/', views.delete),
+
     path('admin/', admin.site.urls),
 ]
