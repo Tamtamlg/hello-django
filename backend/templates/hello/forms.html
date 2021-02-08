@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Hello Django forms{% endblock %}
+{% block content %}
+
+<form method="POST">
+  {% csrf_token %}
+  <div>
+    {% for field in form %}
+    <div class="form-group">
+      {{field.label_tag}}
+      <div>{{field}}</div>
+      {% if field.errors %}
+        {% for error in field.errors %}
+        <div class="error">{{error}}</div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  <button type="submit">Send</button>
+</form>
+
+<!-- <h2>as_table</h2>
+<form method="POST">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Send" >
+</form>
+
+<h2>as_ul</h2>
+<form method="POST">
+    {% csrf_token %}
+    <ul>
+    {{ form.as_ul }}
+    </ul>
+    <input type="submit" value="Send" >
+</form>
+
+<h2>as_p</h2>
+<form method="POST">
+    {% csrf_token %}
+    <div>
+    {{ form.as_p }}
+    </div>
+    <input type="submit" value="Send" >
+</form> -->
+
+{% endblock %}

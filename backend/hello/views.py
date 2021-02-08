@@ -20,6 +20,14 @@ def index(request):
         }
         return render(request, 'hello/index.html', context=data)
 
+def forms(request):
+    if request.method == 'POST':
+        user_form = UserForm(request.POST)
+        if user_form.is_valid():
+            name = user_form.cleaned_data['name']
+            return HttpResponse('<h2>Hello {0}</h2>'.format(name))
+    return render(request, 'hello/forms.html', {'form': user_form})
+
 # def about(request):
 #     return HttpResponse('<h1>About</h1>')
 

@@ -20,6 +20,7 @@ from hello import views
 
 urlpatterns = [
     path('', views.index, name='home'),
+    re_path(r'^forms', views.forms, name='forms'),
     # re_path(r'^about/contacts', views.contacts, name='contacts'),
     # re_path(r'^about', views.about, name='about'),
 
